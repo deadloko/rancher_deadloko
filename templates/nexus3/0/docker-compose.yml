@@ -9,7 +9,7 @@ nexus:
      -  nexus-data
  
 nexus-data:
-  image: "sonatype/nexus-data"
+  image: "sonatype/nexus3"
   volumes:
     - "nexus-data:/nexus-data"
   labels:
