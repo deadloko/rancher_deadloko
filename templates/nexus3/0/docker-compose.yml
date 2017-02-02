@@ -3,7 +3,6 @@ nexus:
   ports:
     - "${PORT}:8081"
   labels:
-    io.rancher.sidekicks: nexus-data
     io.rancher.container.hostname_override: container_name
-  volumes_from:
+  volumes:
     - "nexus-data:/nexus-data"
