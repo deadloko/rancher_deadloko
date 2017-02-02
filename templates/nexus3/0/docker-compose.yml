@@ -10,6 +10,6 @@ nexus:
 nexus-data:
   image: "sonatype/nexus3"
   volumes:
-    - /nexus-data
+    - /opt/nexus-data:/nexus-data
   labels:
     io.rancher.container.start_once: true
