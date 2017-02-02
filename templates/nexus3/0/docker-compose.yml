@@ -1,13 +1,12 @@
 nexus:
   image: "sonatype/nexus3"
   ports:
-  -  "${PORT}:8081"
+    - "${PORT}:8081"
   labels:
     io.rancher.sidekicks: nexus-data
     io.rancher.container.hostname_override: container_name
   volumes_from:
-     -  nexus-data
- 
+    - nexus-data
 nexus-data:
   image: "sonatype/nexus3"
   volumes:
