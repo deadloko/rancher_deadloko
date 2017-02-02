@@ -7,7 +7,7 @@ nexus:
     io.rancher.container.hostname_override: container_name
   volumes_from:
     -  nexus-data
-  entrypoint: ["ls", "-la", "/"]
+  entrypoint: ["/bin/nexus", "run"]
 nexus-data:
   image: "sonatype/nexus3"
   labels:
