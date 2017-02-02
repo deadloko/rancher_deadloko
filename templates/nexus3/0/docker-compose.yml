@@ -6,10 +6,4 @@ nexus:
     io.rancher.sidekicks: nexus-data
     io.rancher.container.hostname_override: container_name
   volumes_from:
-    - nexus-data
-nexus-data:
-  image: "sonatype/nexus3"
-  volumes:
-    - /nexus-data
-  labels:
-    io.rancher.container.start_once: true
+    - "nexus-data:/nexus-data"
