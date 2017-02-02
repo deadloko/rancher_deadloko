@@ -1,0 +1,29 @@
+.catalog:
+  name: Nexus3 OSS
+  version: latest
+  description: |
+    Binary artifacts repository
+  minimum_rancher_version: v0.56.0
+  maintainer: "Andrew Newman <deadloko@gmail.com>"
+  questions:
+  - variable: "PORT"
+    type: "int"
+    label: "Port number"
+    description: "Port to expose on host"
+    default: 8081
+    required: true
+  
+nexus:
+  scale: 1
+  retain_ip: true
+  health_check:
+    port: 8081
+    interval: 30000
+    unhealthy_threshold: 3
+    strategy: recreate
+    response_timeout: 2000
+    healthy_threshold: 2
+
+nexus-data:
+  scale: 1
+  retain_ip: true
