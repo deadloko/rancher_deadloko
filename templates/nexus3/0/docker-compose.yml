@@ -13,3 +13,4 @@ nexus-data:
     - /opt/nexus-data:/nexus-data
   labels:
     io.rancher.container.start_once: true
+  entrypoint: ["chown", "-R", "200:200", "/opt/nexus-data"]
